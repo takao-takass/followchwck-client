@@ -1,2 +1,3 @@
 # followchwck-client
-followcheckのクライアントアプリ
+- followcheckのクライアントアプリ。
+- tauriにて実装。
