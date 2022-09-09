@@ -5,12 +5,25 @@
 
 #[tauri::command]
 fn greet(name: &str) -> String {
+    println!("received: WEEEEEEEEEEI!");
+    println!("received: WEEEEEEEEEEI!");
+    println!("received: WEEEEEEEEEEI!");
+    println!("received: WEEEEEEEEEEI!");
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
+#[tauri::command]
+fn my_custom_command() {
+    println!("I was invoked from JS!");
+}
+
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![
+            greet,
+            my_custom_command,
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

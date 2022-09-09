@@ -1,48 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #436be3;">
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/styles/followcheck.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/main.js" defer></script>
-    <style>
-      .logo.vanilla:hover {
-        filter: drop-shadow(0 0 2em #ffe21c);
-      }
-    </style>
+    <title>followcheck</title>
+    <script src="/scripts/index.js"></script>
   </head>
 
   <body>
-    <div class="container">
-      <h1>Welcome to Tauri!</h1>
+    <div class="container" style="color:white">
 
       <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
-          />
-        </a>
+        <img src="/assets/title.png" class="title-logo" alt="followcheck logo" />
       </div>
 
-      <p>Click on the Tauri logo to learn more about the framework</p>
+      <p class="form-input-margin">サービスの利用にはログインが必要です</p>
 
       <div class="row">
-        <div>
-          <input id="greet-input" placeholder="Enter a name..." />
-          <button type="button" onclick="greet()">Greet</button>
+          <input type="mail" id="" placeholder="メールアドレス"  class="form-input-margin"/>
         </div>
+        <div class="row">
+          <input type="password" id="" placeholder="パスワード"  class="form-input-margin"/>
+        </div>
+        <div class="row">
+          <button type="button" onclick="command()" class="form-input-margin">ログイン</button>
       </div>
 
-      <p id="greet-msg"></p>
     </div>
   </body>
 </html>
