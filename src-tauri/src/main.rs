@@ -18,11 +18,28 @@ fn my_custom_command() {
 }
 
 
+#[tauri::command]
+fn login(mail: String, password: String) -> Result<String, String> {
+
+    println!("Do login action.");
+    println!("Mailaddress: {}", &mail);
+    println!("Password: {}", &password);
+
+    // Login action
+    if &password.len() > &0 {
+        Ok("okokokk".into())
+    } else {
+        Err("errororor".into())
+    }
+}
+
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             greet,
             my_custom_command,
+            login
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
